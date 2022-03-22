@@ -2,11 +2,17 @@ package tdd;
 
 import java.util.ArrayList;
 
+
+
 public class Student {
 
     private static long id;
     private static String name;
     private static ArrayList<Integer> grades;
+
+    public Student (){
+
+    }
 
     public Student(long idNum, String name) {
         Student.name = name;
@@ -34,7 +40,15 @@ public class Student {
         return grades;
     }
 
-    public static void setGrades(ArrayList<Integer> grades) {
-        Student.grades = grades;
+
+    public void addGrade(int grade) {
+        grades.add(grade);
+    }
+    public double getGradeAverage() {
+        double sum = 0;
+        for (int grade: grades) {
+            sum += grade;
+        }
+        return sum / grades.size();
     }
 }/// END OF CLASS
